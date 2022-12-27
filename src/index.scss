@@ -1,4 +1,64 @@
-body
-{
-    background-color: #202023;
+@import "./sass/colors/colors.scss";
+@import "./sass/variables/variables.scss";
+@mixin text-style($weight, $font-size, $font-family) {
+    font-weight: $weight;
+    font-size: $font-size;
+    font-family: $font-family;
+}
+@mixin display-style($display, $align-itens, $justify-content) {
+    display: $display;
+    align-items: $align-itens;
+    justify-content: $justify-content;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+.content {
+    width: 100%;
+    height: 100vh;
+    .fundo {
+        width: 100%;
+        height: 34vh;
+        background: url(./Componentes/images/age-barros-rBPOfVqROzY-unsplash.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        .icon {
+            display: flex;
+            padding-top: 23rem;
+            justify-content: center;
+        }
+    }
+    .text {
+        width: 100%;
+        height: 66vh;
+        display: flex;
+        flex-direction: column;
+        padding: 18.1rem 19.7rem;
+        h1 {
+            @include text-style(800, $title-size-large, Cinzel);
+        }
+        p {
+            @include text-style(600, $text-size-large, Cinzel);
+        }
+        .btn-style1 {
+            color: $white;
+            margin-top: 3.2rem;
+            max-width: 28.8rem;
+            max-height: 9.3rem;
+            border-radius: 1rem;
+            padding: 2.1rem 5.6rem;
+            transition: 0.3s;
+            background-color: $blue-button;
+            @include display-style(flex, center, center);
+            &:hover {
+                background-color: $blue-button-hover;
+                transition: 0.3s;
+            }
+        }
+    }
 }
