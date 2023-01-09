@@ -1,14 +1,10 @@
 @import "./sass/colors/colors.scss";
 @import "./sass/variables/variables.scss";
+@import "./sass/global.scss";
 @mixin text-style($weight, $font-size, $font-family) {
     font-weight: $weight;
     font-size: $font-size;
     font-family: $font-family;
-}
-@mixin display-style($display, $align-itens, $justify-content) {
-    display: $display;
-    align-items: $align-itens;
-    justify-content: $justify-content;
 }
 * {
     margin: 0;
@@ -46,19 +42,90 @@ html {
             @include text-style(600, $text-size-large, Cinzel);
         }
         .btn-style1 {
-            color: $white;
             margin-top: 3.2rem;
-            max-width: 28.8rem;
-            max-height: 9.3rem;
-            border-radius: 1rem;
-            padding: 2.1rem 5.6rem;
-            transition: 0.3s;
-            background-color: $blue-button;
-            @include display-style(flex, center, center);
-            &:hover {
-                background-color: $blue-button-hover;
-                transition: 0.3s;
+        }
+    }
+}
+@media (max-width: 1440px) {
+    .content {
+        .fundo {
+            height: 34vh;
+            .icon {
+                padding-top: 11.75rem;
+                img {
+                    width: 17rem;
+                }
+            }
+        }
+        .text {
+            padding: 5.1rem 11.7rem;
+            h1 {
+                @include text-style(800, $title-size-medium, Cinzel);
+            }
+            p {
+                @include text-style(600, $text-size-medium, Cinzel);
+            }
+            .btn-style1 {
+                margin-top: 1.2rem;
+                max-width: 24.8rem;
+                max-height: 6.3rem;
             }
         }
     }
 }
+@media (max-width: 790px) {
+    .content {
+        .fundo {
+            height: 28vh;
+            .icon {
+                padding-top: 7rem;
+                img {
+                    width: 14rem;
+                }
+            }
+        }
+        .text {
+            padding: 6.1rem 8.7rem;
+        }
+    }
+}
+@media (max-width: 584px) {
+    .content {
+        .fundo {
+            height: 27vh;
+            .icon {
+                padding-top: 6.5rem;
+            }
+        }
+        .text {
+            padding: 4.1rem 4.7rem;
+        }
+    }
+}
+@media (max-width: 505px) {
+    .content {
+        .fundo {
+            height: 27vh;
+            .icon {
+                padding-top: 6.5rem;
+                img {
+                    width: 14rem;
+                }
+            }
+        }
+        .text {
+            padding: 4.1rem 4.7rem;
+            h1 {
+                @include text-style(800, $title-size-small, Cinzel);
+            }
+            p {
+                @include text-style(600, $text-size-small, Cinzel);
+            }
+            .btn-style1 {
+                margin-top: 1.2rem;
+                max-width: 16.8rem;
+                max-height: 0.3rem;
+            }
+        }
+    }
+} ;

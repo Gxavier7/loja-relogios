@@ -1,0 +1,19 @@
+@mixin display-style($display, $align-itens, $justify-content) {
+    display: $display;
+    align-items: $align-itens;
+    justify-content: $justify-content;
+}
+.btn-style1 {
+    color: $white;
+    transition: 0.3s;
+    max-width: 28.8rem;
+    max-height: 9.3rem;
+    border-radius: 1rem;
+    padding: 2.1rem 5.6rem;
+    background-color: $blue-button;
+    @include display-style(flex, center, center);
+    &:hover {
+        background-color: $blue-button-hover;
+        transition: 0.3s;
+    }
+}
